@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="wrap">
+    <header class="header">
+        <div class="headerMain">
+            <h1 class="logo"><a href="javascript:;"><img src="img/logo.png" alt=""></a></h1>
+            <nav class="nav">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="javascript:;">
+                            <div class="up"><img src="img/home_gruen.png" alt=""></div>
+                            <div class="down"><img src="img/home.png" alt=""></div>
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="javascript:;">
+                            <div class="up">Course</div>
+                            <div class="down">Course</div>
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="javascript:;">
+                            <div class="up">Works</div>
+                            <div class="down">Works</div>
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="javascript:;">
+                            <div class="up">About</div>
+                            <div class="down">About</div>
+                        </a>
+                    </li>
+                    <li class="navItem">
+                        <a href="javascript:;">
+                            <div class="up">Team</div>
+                            <div class="down">Team</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="arrow"></div>
+    </header>
+    <div class="content">
+        <ul class="contentList">
+            <li class="contentItem">
+                <div class="contentInner">1</div>
+            </li>
+            <li class="contentItem">
+                <div class="contentInner">2</div>
+            </li>
+            <li class="contentItem">
+                <div class="contentInner">3</div>
+            </li>
+            <li class="contentItem">
+                <div class="contentInner">4</div>
+            </li>
+            <li class="contentItem">
+                <div class="contentInner">5</div>
+            </li>
+        </ul>
+    </div>
+    <div class="bar">
+        <ul class="barList">
+            <li class="barItem active"></li>
+            <li class="barItem"></li>
+            <li class="barItem"></li>
+            <li class="barItem"></li>
+            <li class="barItem"></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var header = document.querySelector('#wrap .header');
+    var content = document.querySelector('#wrap .content');
+    var contentItems = document.querySelectorAll('#wrap .content .contentList .contentItem');
+    var navItems = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem');
+    var ups = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem a .up');
+    var arrow = document.querySelector('#wrap .header .arrow');
+    var contentList = document.querySelector('#wrap .content .contentList');
+    var barItems=document.querySelectorAll('#wrap .bar .barList .barItem');
+    var mouseIndex=0;
+
+    var timer=null;
+    //主体内容初始化
+    conentBind();
+
+    function conentBind() {
+        content.style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
+        for (var i = 0; i < contentItems.length; i++) {
+            contentItems[i].style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
+        }
+    }
+
+    //导航点击跳转
+    headerBind();
+    function headerBind() {
+        arrow.style.left = navItems[0].getBoundingClientRect().left + navItems[0].offsetWidth / 2 + 'px';
+        ups[0].style.width = '100%';
+        for (var i = 0; i < navItems.length; i++) {
+            navItems[i].index = i;
+            navItems[i].onclick = function () {
+                move(this.index);
+                mouseIndex=this.index;
+            }
+        }
+
+
+    }
+    //移动
+    function move(index) {
+        for (var i = 0; i < ups.length; i++) {
+            ups[i].style.width = '';
+        }
+        ups[index].style.width = '100%';
+        contentList.style.top = -index * +contentItems[index].offsetHeight + 'px';
+        arrow.style.left = navItems[index].getBoundingClientRect().left + navItems[index].offsetWidth / 2 + 'px';
+        for (var i = 0; i <barItems.length ; i++) {
+            barItems[i].classList.remove('active');
+        }
+        barItems[index].classList.add('active');
+    }
+    //鼠标滚动
+    mouseScroll();
+    function mouseScroll(){
+        //ie/chrome
+        document.onmousewheel=function(event){
+            clearTimeout(timer);
+           timer=setTimeout(function(){
+            scrollMove(event);
+           },200)
+        };
+        //firefox
+        if(document.addEventListener){
+            document.addEventListener('DOMMouseScroll',function(event){
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    scrollMove(event);
+                },200);
+            });
+        }
+
+        function scrollMove(event){
+            event=event || window.event;
+            var flag='';
+            if(event.wheelDelta){
+                //ie/chrome
+                if(event.wheelDelta>0){
+                    flag='up';
+                }else{
+                    flag='down';
+                }
+
+            }else if(event.detail){
+                if(event.detail<0){
+                    flag='up';
+                }else{
+                    flag='down';
+                }
+            }
+            switch (flag) {
+                case 'up':
+                    if(mouseIndex>0){
+                        mouseIndex--;
+                        move(mouseIndex);
+                    }
+                    break;
+                case 'down':
+                    if(mouseIndex<contentItems.length-1){
+                        mouseIndex++;
+                        move(mouseIndex);
+                    }
+                    break;
+            }
+            event.preventDefault&&event.preventDefault();
+            return false;
+        };
+    }
+
+    //侧栏点击跳转
+    barBind();
+    function  barBind() {
+        for (var i = 0; i <barItems.length ; i++) {
+            barItems[i].index=i;
+            barItems[i].onclick=function(){
+                move(this.index);
+                mouseIndex=this.index;
+            }
+        }
+    }
+</script>
+</body>
+</html>
