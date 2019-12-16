@@ -55,11 +55,81 @@
             <li class="contentItem">
                 <div class="contentInner">2</div>
             </li>
-            <li class="contentItem">
-                <div class="contentInner">3</div>
+            <li class="contentItem works">
+                <div class="contentInner">
+                    <div class="work1">
+                        <p class="commonTitle">EINBLICK</p>
+                        <p class="commonTitle">ERKENNTNIS</p>
+                        <p class="commonTitle">ERGEBNIS</p>
+                    </div>
+                    <div class="work2">
+                        <ul class="work2List">
+                            <li class="work2Item">
+                                <img src="img/worksimg1.jpg" alt="">
+                                <div class="mask">
+                                    <p class="maskText">这是一段文字</p>
+                                    <div class="maskIcon"></div>
+                                </div>
+                            </li>
+                            <li class="work2Item">
+                                <img src="img/worksimg2.jpg" alt="">
+                                <div class="mask">
+                                    <p class="maskText">这是一段文字</p>
+                                    <div class="maskIcon"></div>
+                                </div>
+                            </li>
+                            <li class="work2Item">
+                                <img src="img/worksimg3.jpg" alt="">
+                                <div class="mask">
+                                    <p class="maskText">这是一段文字</p>
+                                    <div class="maskIcon"></div>
+                                </div>
+                            </li>
+                            <li class="work2Item">
+                                <img src="img/worksimg4.jpg" alt="">
+                                <div class="mask">
+                                    <p class="maskText">这是一段文字</p>
+                                    <div class="maskIcon"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="work3">
+                    </div>
+                </div>
             </li>
-            <li class="contentItem">
-                <div class="contentInner">4</div>
+            <li class="contentItem about">
+                <div class="lineBg"></div>
+                <div class="contentInner">
+                    <div class="about1">
+                        <p class="commonTitle">EINBLICK</p>
+                        <p class="commonTitle">ERKENNTNIS</p>
+                        <p class="commonTitle">ERGEBNIS</p>
+                    </div>
+                    <div class="about2">
+                        <p class="commonText">Der bunte Medienmix ist die Faszination die uns antreibt und das, was man an uns schätzt. Von A bis Z und von vorne bis hinten nehmen wir Ihr Projekt unter unsere Fittiche und lassen es zu etwas Großartigem heranwachsen.</p>
+                    </div>
+                    <div class="about3">
+                        <div class="about3Item">
+                            <img src="img/about1.jpg" alt="">
+                            <ul class="maskList">
+                                <li class="maskItem"><img src="img/about2.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about2.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about2.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about2.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="about3Item">
+                            <img src="img/about3.jpg" alt="">
+                            <ul class="maskList">
+                                <li class="maskItem"><img src="img/about4.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about4.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about4.jpg" alt=""></li>
+                                <li class="maskItem"><img src="img/about4.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li class="contentItem">
                 <div class="contentInner">5</div>
@@ -89,9 +159,9 @@
 
     var timer=null;
     //主体内容初始化
-    conentBind();
+    contentBind();
 
-    function conentBind() {
+    function contentBind() {
         content.style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
         for (var i = 0; i < contentItems.length; i++) {
             contentItems[i].style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
@@ -193,6 +263,10 @@
                 mouseIndex=this.index;
             }
         }
+    }
+    window.onresize=function(){
+        contentBind();
+        move(mouseIndex);
     }
 </script>
 </body>

@@ -34,13 +34,30 @@ img {
     clear: both;
 }
 
+/*###title公共样式*/
+.commonTitle {
+    color: #009ee0;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
+}
+
+/*###text公共样式*/
+.commonText {
+    color: white;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
 #wrap {
     height: 100%;
 }
+
 /*header*/
 #wrap .header {
     height: 80px;
-    position:relative;
+    position: relative;
 }
 
 #wrap .header .headerMain {
@@ -55,103 +72,280 @@ img {
 }
 
 #wrap .header .headerMain .nav {
-    float:right;
-    margin-top:50px;
-}
-#wrap .header .headerMain .nav .navList{
-    overflow:hidden;
-}
-#wrap .header .headerMain .nav .navList .navItem{
-    float:left;
-    margin-left:40px;
-}
-#wrap .header .headerMain .nav .navList .navItem a{
-    position:relative;
+    float: right;
+    margin-top: 50px;
 }
 
-#wrap .header .headerMain .nav .navList .navItem a .up{
-    position:absolute;
-    left:0;
-    top:0;
-    width:0;
-    transition:1s;
-    overflow:hidden;
-    color:black;
+#wrap .header .headerMain .nav .navList {
+    overflow: hidden;
 }
-#wrap .header .headerMain .nav .navList .navItem a .down{
-    color:skyblue;
+
+#wrap .header .headerMain .nav .navList .navItem {
+    float: left;
+    margin-left: 40px;
 }
-#wrap .header .headerMain .nav .navList .navItem a:hover .up{
-    width:100%;
+
+#wrap .header .headerMain .nav .navList .navItem a {
+    position: relative;
 }
-#wrap .header .arrow{
+
+#wrap .header .headerMain .nav .navList .navItem a .up {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    transition: 1s;
+    overflow: hidden;
+    color: black;
+}
+
+#wrap .header .headerMain .nav .navList .navItem a .down {
+    color: skyblue;
+}
+
+#wrap .header .headerMain .nav .navList .navItem a:hover .up {
+    width: 100%;
+}
+
+#wrap .header .arrow {
     width: 21px;
     height: 11px;
     background: url("../img/arrow.png") no-repeat;
-    position:absolute;
-    left:50%;
-    top:100%;
-    transform:translateX(-50%);
-    z-index:5;
-    transition:.5s;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    z-index: 5;
+    transition: .5s;
 }
 
 /*content*/
-#wrap .content{
-    width:100%;
-    position:relative;
-    overflow:hidden;
-}
-#wrap .content .contentList{
-    width:100%;
-    position:absolute;
-    left:0;
-    top:0;
-    transition:.5s;
-}
-#wrap .content .contentList .contentItem{
-    position:relative;
-    background-repeat:no-repeat;
-    background-position:center;
-}
-#wrap .content .contentList .contentItem .contentInner{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
+#wrap .content {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
     background-color:skyblue;
-    width:1100px;
-    height:520px;
 }
-#wrap .content .contentList .contentItem:nth-child(1){
+
+#wrap .content .contentList {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s;
+}
+
+#wrap .content .contentList .contentItem {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#wrap .content .contentList .contentItem .contentInner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: skyblue;
+    width: 1100px;
+    height: 520px;
+}
+
+#wrap .content .contentList .contentItem:nth-child(1) {
     background-image: url("../img/bg1.jpg");
 }
-#wrap .content .contentList .contentItem:nth-child(2){
+
+#wrap .content .contentList .contentItem:nth-child(2) {
     background-image: url("../img/bg2.jpg");
 }
-#wrap .content .contentList .contentItem:nth-child(3){
+
+#wrap .content .contentList .contentItem:nth-child(3) {
     background-image: url("../img/bg3.jpg");
 }
-#wrap .content .contentList .contentItem:nth-child(4){
+
+#wrap .content .contentList .contentItem:nth-child(4) {
     background-image: url("../img/bg4.jpg");
 }
-#wrap .content .contentList .contentItem:nth-child(5){
+
+#wrap .content .contentList .contentItem:nth-child(5) {
     background-image: url("../img/bg5.jpg");
 }
 
 /*bar*/
-#wrap .bar{
-    position:fixed;
-    right:10px;
-    top:50%;
+#wrap .bar {
+    position: fixed;
+    right: 10px;
+    top: 50%;
 }
+
 #wrap .bar .barList .barItem {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     border: 1px solid #fff;
-    margin-top:10px;
+    margin-top: 10px;
 }
-#wrap .bar .barList .barItem.active{
-    background-color:#fff;
+
+#wrap .bar .barList .barItem.active {
+
+    background-color: #fff;
 }
+
+/*works*/
+#wrap .content .contentList .contentItem.works .contentInner .work1{
+    margin:50px 0 100px 50px;
+}
+
+#wrap .content .contentList .contentItem.works .contentInner .work2{
+    margin-left:50px;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List{
+    overflow:hidden;
+}
+
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item{
+    position:relative;
+    float:left;
+    margin-right:1px;
+    width:220px;
+    height:133px;
+    overflow:hidden;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item:last-child{
+    width:332px;
+}
+
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item .mask{
+    position:absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    background-color:rgba(25,25,25,.8);
+    color:white;
+    opacity:0;
+    transition:opacity 1s;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item .mask .maskText{
+    margin:10px;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item .mask .maskIcon{
+    width: 32px;
+    height: 34px;
+    background-image: url('../img/zoomico.png');
+    background-repeat: no-repeat;
+    margin:0 auto;
+    background-position: 0 0;
+    transition:1s;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item:hover .mask{
+    opacity:1;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item img{
+    transition:1s;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item:hover img{
+    transform:rotate(30deg) scale(1.8);
+}
+#wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item:hover .mask .maskIcon{
+    background-position:0 -35px;
+}
+#wrap .content .contentList .contentItem.works .contentInner .work3{
+    position:absolute;
+    left:900px;
+    top: 170px;
+    width: 167px;
+    height: 191px;
+    background-image:url("../img/robot.png");
+    animation: robot 5s linear infinite;
+}
+@keyframes robot{
+    0%{transform: rotateY(0deg);}
+    49%{transform: rotateY(0deg);}
+    50%{left:40%;transform: rotateY(180deg);}
+    100%{transform: rotateY(180deg)}
+}
+
+/*about*/
+#wrap .content .contentList .contentItem.about .about1{
+    margin:50px 0 100px 50px;
+}
+#wrap .content .contentList .contentItem.about .about2{
+    width: 400px;
+    margin-left:50px;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item{
+    position:absolute;
+    width: 260px;
+    height: 200px;
+    border:5px solid rgba(255,255,255,0.5);
+    border-radius:8px;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item:first-child{
+    left:750px;
+    top:50px;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item:last-child{
+    left:600px;
+    top:290px;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList{
+    position:absolute;
+    float:left;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem{
+    position:relative;
+    float:left;
+    width:50%;
+    height:50%;
+    overflow:hidden;
+    z-index: 5;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem img{
+    position:absolute;
+    transition:1s;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem:nth-child(1) img{
+    left:0;
+    top:0;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem:nth-child(2) img{
+    right:0;
+    top:0;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem:nth-child(3) img{
+    left:0;
+    bottom:0;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem:nth-child(4) img{
+    right:0;
+    bottom:0;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList:hover  .maskItem:nth-child(1) img{
+    top:100%;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList:hover  .maskItem:nth-child(2) img{
+    right:100%;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList:hover  .maskItem:nth-child(3) img{
+    left:100%;
+}
+#wrap .content .contentList .contentItem.about .about3 .about3Item .maskList:hover  .maskItem:nth-child(4) img{
+    bottom:100%;
+}
+#wrap .content .contentList .contentItem.about .lineBg{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:357px;
+    height: 998px;
+    background:url("../img/greenLine.png") no-repeat;
+    z-index: 3;
+}
+/*线背景:   宽度357px 高度:998px*/
