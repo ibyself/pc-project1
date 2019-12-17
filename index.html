@@ -49,11 +49,91 @@
     </header>
     <div class="content">
         <ul class="contentList">
-            <li class="contentItem">
-                <div class="contentInner">1</div>
+            <li class="contentItem home">
+                <div class="contentInner">
+                    <ul class="homeList">
+                        <li class="homeItem commonTitle active">one Layer</li>
+                        <li class="homeItem commonTitle">two Layer</li>
+                        <li class="homeItem commonTitle">three Layer</li>
+                        <li class="homeItem commonTitle">four Layer</li>
+                    </ul>
+                    <ol class="iconList">
+                        <li class="iconItem active"></li>
+                        <li class="iconItem"></li>
+                        <li class="iconItem"></li>
+                        <li class="iconItem"></li>
+                    </ol>
+                </div>
             </li>
-            <li class="contentItem">
-                <div class="contentInner">2</div>
+            <li class="contentItem course">
+                <div class="contentInner">
+                    <div class="course1">
+                        <p class="commonTitle">EINIGE</p>
+                        <p class="commonTitle">UNSERER</p>
+                        <p class="commonTitle">KUNDEN</p>
+                    </div>
+                    <div class="course2">
+                        <p class="commonText">Das Kundenvertrauen in unsere Kompetenz ist die notwendige Basis einer erfolgreichen Zusammenarbeit, gleichzeitig aber auch das größte Lob, das man uns entgegenbringen kann.</p>
+                        <p class="commonText">Diese und viele weitere große und kleine Kunden vertrauen uns seit Jahren, was uns stolz macht, und dafür sagen wir an dieser Stelle einfach mal.</p>
+                    </div>
+                    <div class="course3">
+                        <ul class="course3List">
+                            <li class="course3Plus"></li>
+                            <li class="course3Plus"></li>
+                            <li class="course3Plus"></li>
+                            <li class="course3Plus"></li>
+                            <li class="course3Plus"></li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"><span>我是文字</span></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"><span>我是文字</span></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"><span>我是文字</span></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                            <li class="course3Item">
+                                <div class="front"></div>
+                                <div class="back"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </li>
             <li class="contentItem works">
                 <div class="contentInner">
@@ -131,8 +211,25 @@
                     </div>
                 </div>
             </li>
-            <li class="contentItem">
-                <div class="contentInner">5</div>
+            <li class="contentItem team">
+                <div class="contentInner">
+                    <div class="team1">
+                        <p class="commonTitle">WIR SIND</p>
+                        <p class="commonTitle">VOXELAIR</p>
+                    </div>
+                    <div class="team2">
+                        <p class="commonText">Wir sind seit 2002 eine Full-Service-Werbeagentur mit Stammsitz in Heimsheim, zwischen Stuttgart und Karlsruhe.</p>
+                        <p class="commonText">Über 60 Jahre Erfahrung vereinen das gesamte VoxelAir-Team. Dabei hat jedes Voxel neben professionellem Allroundwissen auch sein ganz spezielles Gebiet, um selbst die individuellsten Kundenwünsche schnell und kompetent umzusetzen.</p>
+                    </div>
+                    <div class="team3">
+                        <ul class="team3List">
+                            <li class="team3Item"></li>
+                            <li class="team3Item"></li>
+                            <li class="team3Item"></li>
+                            <li class="team3Item"></li>
+                        </ul>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -147,126 +244,185 @@
     </div>
 </div>
 <script type="text/javascript">
-    var header = document.querySelector('#wrap .header');
-    var content = document.querySelector('#wrap .content');
-    var contentItems = document.querySelectorAll('#wrap .content .contentList .contentItem');
-    var navItems = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem');
-    var ups = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem a .up');
-    var arrow = document.querySelector('#wrap .header .arrow');
-    var contentList = document.querySelector('#wrap .content .contentList');
-    var barItems=document.querySelectorAll('#wrap .bar .barList .barItem');
-    var mouseIndex=0;
+    window.onload=function(){
+        var header = document.querySelector('#wrap .header');
+        var content = document.querySelector('#wrap .content');
+        var contentItems = document.querySelectorAll('#wrap .content .contentList .contentItem');
+        var navItems = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem');
+        var ups = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem a .up');
+        var arrow = document.querySelector('#wrap .header .arrow');
+        var contentList = document.querySelector('#wrap .content .contentList');
+        var barItems=document.querySelectorAll('#wrap .bar .barList .barItem');
+        var iconItems=document.querySelectorAll('#wrap .content .contentList .contentItem.home .iconList .iconItem');
+        var homeItems=document.querySelectorAll('#wrap .content .contentList .contentItem.home .homeList .homeItem');
+        var mouseIndex=4;
+        var timer=null;
+        var iconIndex=0;
+        var isAnimation=false;
 
-    var timer=null;
-    //主体内容初始化
-    contentBind();
 
-    function contentBind() {
-        content.style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
-        for (var i = 0; i < contentItems.length; i++) {
-            contentItems[i].style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
-        }
-    }
-
-    //导航点击跳转
-    headerBind();
-    function headerBind() {
-        arrow.style.left = navItems[0].getBoundingClientRect().left + navItems[0].offsetWidth / 2 + 'px';
-        ups[0].style.width = '100%';
-        for (var i = 0; i < navItems.length; i++) {
-            navItems[i].index = i;
-            navItems[i].onclick = function () {
-                move(this.index);
-                mouseIndex=this.index;
+        //主体内容初始化
+        contentBind();
+        function contentBind() {
+            content.style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
+            for (var i = 0; i < contentItems.length; i++) {
+                contentItems[i].style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
             }
         }
 
+        //导航点击跳转
+        headerBind();
+        function headerBind() {
+            arrow.style.left = navItems[0].getBoundingClientRect().left + navItems[0].offsetWidth / 2 + 'px';
+            ups[0].style.width = '100%';
+            for (var i = 0; i < navItems.length; i++) {
+                navItems[i].index = i;
+                navItems[i].onclick = function () {
+                    move(this.index);
+                    mouseIndex=this.index;
+                }
+            }
 
-    }
-    //移动
-    function move(index) {
-        for (var i = 0; i < ups.length; i++) {
-            ups[i].style.width = '';
+
         }
-        ups[index].style.width = '100%';
-        contentList.style.top = -index * +contentItems[index].offsetHeight + 'px';
-        arrow.style.left = navItems[index].getBoundingClientRect().left + navItems[index].offsetWidth / 2 + 'px';
-        for (var i = 0; i <barItems.length ; i++) {
-            barItems[i].classList.remove('active');
+        //移动
+        function move(index) {
+            for (var i = 0; i < ups.length; i++) {
+                ups[i].style.width = '';
+            }
+            ups[index].style.width = '100%';
+            contentList.style.top = -index * +contentItems[index].offsetHeight + 'px';
+            arrow.style.left = navItems[index].getBoundingClientRect().left + navItems[index].offsetWidth / 2 + 'px';
+            for (var i = 0; i <barItems.length ; i++) {
+                barItems[i].classList.remove('active');
+            }
+            barItems[index].classList.add('active');
         }
-        barItems[index].classList.add('active');
-    }
-    //鼠标滚动
-    mouseScroll();
-    function mouseScroll(){
-        //ie/chrome
-        document.onmousewheel=function(event){
-            clearTimeout(timer);
-           timer=setTimeout(function(){
-            scrollMove(event);
-           },200)
-        };
-        //firefox
-        if(document.addEventListener){
-            document.addEventListener('DOMMouseScroll',function(event){
+        //鼠标滚动
+        mouseScroll();
+        function mouseScroll(){
+            //ie/chrome
+            document.onmousewheel=function(event){
                 clearTimeout(timer);
                 timer=setTimeout(function(){
                     scrollMove(event);
-                },200);
-            });
+                },200)
+            };
+            //firefox
+            if(document.addEventListener){
+                document.addEventListener('DOMMouseScroll',function(event){
+                    clearTimeout(timer);
+                    timer=setTimeout(function(){
+                        scrollMove(event);
+                    },200);
+                });
+            }
+
+            function scrollMove(event){
+                event=event || window.event;
+                var flag='';
+                if(event.wheelDelta){
+                    //ie/chrome
+                    if(event.wheelDelta>0){
+                        flag='up';
+                    }else{
+                        flag='down';
+                    }
+
+                }else if(event.detail){
+                    if(event.detail<0){
+                        flag='up';
+                    }else{
+                        flag='down';
+                    }
+                }
+                switch (flag) {
+                    case 'up':
+                        if(mouseIndex>0){
+                            mouseIndex--;
+                            move(mouseIndex);
+                        }
+                        break;
+                    case 'down':
+                        if(mouseIndex<contentItems.length-1){
+                            mouseIndex++;
+                            move(mouseIndex);
+                        }
+                        break;
+                }
+                event.preventDefault&&event.preventDefault();
+                return false;
+            };
         }
 
-        function scrollMove(event){
-            event=event || window.event;
-            var flag='';
-            if(event.wheelDelta){
-                //ie/chrome
-                if(event.wheelDelta>0){
-                    flag='up';
-                }else{
-                    flag='down';
-                }
 
-            }else if(event.detail){
-                if(event.detail<0){
-                    flag='up';
-                }else{
-                    flag='down';
+        //侧栏点击跳转
+        barBind();
+        function  barBind() {
+            for (var i = 0; i <barItems.length ; i++) {
+                barItems[i].index=i;
+                barItems[i].onclick=function(){
+                    move(this.index);
+                    mouseIndex=this.index;
                 }
-            }
-            switch (flag) {
-                case 'up':
-                    if(mouseIndex>0){
-                        mouseIndex--;
-                        move(mouseIndex);
-                    }
-                    break;
-                case 'down':
-                    if(mouseIndex<contentItems.length-1){
-                        mouseIndex++;
-                        move(mouseIndex);
-                    }
-                    break;
-            }
-            event.preventDefault&&event.preventDefault();
-            return false;
-        };
-    }
-
-    //侧栏点击跳转
-    barBind();
-    function  barBind() {
-        for (var i = 0; i <barItems.length ; i++) {
-            barItems[i].index=i;
-            barItems[i].onclick=function(){
-                move(this.index);
-                mouseIndex=this.index;
             }
         }
-    }
-    window.onresize=function(){
-        contentBind();
-        move(mouseIndex);
+        window.onresize=function(){
+            contentBind();
+            move(mouseIndex);
+        }
+
+        //首屏点击小圆点切换
+        for (var i = 0; i <iconItems.length ; i++) {
+            iconItems[i].index=i;
+            iconItems[i].onclick=function(){
+                if(isAnimation){
+                    return;
+                }
+                isAnimation=true;
+                setTimeout(function(){
+                    isAnimation=false
+                },3000);
+                for (var j = 0; j <homeItems.length ; j++) {
+                    homeItems[j].className='homeItem commonTitle';
+                }
+                if(this.index>iconIndex){
+                    homeItems[iconIndex].className='homeItem commonTitle leftHide';
+                    homeItems[this.index>iconItems.length-1?0:iconIndex+1].className='homeItem commonTitle rightShow';
+                }else if(this.index<iconIndex){
+                    homeItems[iconIndex].className='homeItem commonTitle rightHide';
+                    homeItems[this.index].className='homeItem commonTitle leftShow';
+                }else{
+                    homeItems[this.index].className='homeItem commonTitle active';
+                }
+                iconIndex=this.index;
+                for (var k = 0; k <iconItems.length ; k++) {
+                    iconItems[k].className='iconItem';
+                }
+                iconItems[this.index].className='iconItem active';
+            }
+        }
+
+        //自动轮播
+        setInterval(function(){
+            if(isAnimation){
+                return;
+            }
+            isAnimation=true;
+            setTimeout(function(){
+                isAnimation=false
+            },3000);
+            homeItems[iconIndex].className='homeItem commonTitle leftHide';
+            homeItems[iconIndex+1>iconItems.length-1?0:iconIndex+1].className='homeItem commonTitle rightShow';
+            iconIndex++;
+            if(iconIndex>iconItems.length-1){
+                iconIndex=0;
+            }
+            for (var i = 0; i <iconItems.length ; i++) {
+                iconItems[i].className='iconItem';
+            }
+            iconItems[iconIndex].className='iconItem active';
+        },4000);
     }
 </script>
 </body>

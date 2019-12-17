@@ -59,36 +59,29 @@ img {
     height: 80px;
     position: relative;
 }
-
 #wrap .header .headerMain {
     width: 1100px;
     margin: 0 auto;
     overflow: hidden;
 }
-
 #wrap .header .headerMain .logo {
     float: left;
     margin-top: 15px;
 }
-
 #wrap .header .headerMain .nav {
     float: right;
     margin-top: 50px;
 }
-
 #wrap .header .headerMain .nav .navList {
     overflow: hidden;
 }
-
 #wrap .header .headerMain .nav .navList .navItem {
     float: left;
     margin-left: 40px;
 }
-
 #wrap .header .headerMain .nav .navList .navItem a {
     position: relative;
 }
-
 #wrap .header .headerMain .nav .navList .navItem a .up {
     position: absolute;
     left: 0;
@@ -98,15 +91,12 @@ img {
     overflow: hidden;
     color: black;
 }
-
 #wrap .header .headerMain .nav .navList .navItem a .down {
     color: skyblue;
 }
-
 #wrap .header .headerMain .nav .navList .navItem a:hover .up {
     width: 100%;
 }
-
 #wrap .header .arrow {
     width: 21px;
     height: 11px;
@@ -126,7 +116,6 @@ img {
     overflow: hidden;
     background-color:skyblue;
 }
-
 #wrap .content .contentList {
     width: 100%;
     position: absolute;
@@ -134,13 +123,12 @@ img {
     top: 0;
     transition: .5s;
 }
-
 #wrap .content .contentList .contentItem {
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
+    overflow:hidden;
 }
-
 #wrap .content .contentList .contentItem .contentInner {
     position: absolute;
     left: 0;
@@ -148,27 +136,21 @@ img {
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color: skyblue;
     width: 1100px;
     height: 520px;
 }
-
 #wrap .content .contentList .contentItem:nth-child(1) {
     background-image: url("../img/bg1.jpg");
 }
-
 #wrap .content .contentList .contentItem:nth-child(2) {
     background-image: url("../img/bg2.jpg");
 }
-
 #wrap .content .contentList .contentItem:nth-child(3) {
     background-image: url("../img/bg3.jpg");
 }
-
 #wrap .content .contentList .contentItem:nth-child(4) {
     background-image: url("../img/bg4.jpg");
 }
-
 #wrap .content .contentList .contentItem:nth-child(5) {
     background-image: url("../img/bg5.jpg");
 }
@@ -179,7 +161,6 @@ img {
     right: 10px;
     top: 50%;
 }
-
 #wrap .bar .barList .barItem {
     width: 15px;
     height: 15px;
@@ -187,7 +168,6 @@ img {
     border: 1px solid #fff;
     margin-top: 10px;
 }
-
 #wrap .bar .barList .barItem.active {
 
     background-color: #fff;
@@ -197,14 +177,12 @@ img {
 #wrap .content .contentList .contentItem.works .contentInner .work1{
     margin:50px 0 100px 50px;
 }
-
 #wrap .content .contentList .contentItem.works .contentInner .work2{
     margin-left:50px;
 }
 #wrap .content .contentList .contentItem.works .contentInner .work2 .work2List{
     overflow:hidden;
 }
-
 #wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item{
     position:relative;
     float:left;
@@ -216,7 +194,6 @@ img {
 #wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item:last-child{
     width:332px;
 }
-
 #wrap .content .contentList .contentItem.works .contentInner .work2 .work2List .work2Item .mask{
     position:absolute;
     left: 0;
@@ -282,6 +259,7 @@ img {
     height: 200px;
     border:5px solid rgba(255,255,255,0.5);
     border-radius:8px;
+    z-index: 5;
 }
 #wrap .content .contentList .contentItem.about .about3 .about3Item:first-child{
     left:750px;
@@ -305,7 +283,6 @@ img {
     width:50%;
     height:50%;
     overflow:hidden;
-    z-index: 5;
 }
 #wrap .content .contentList .contentItem.about .about3 .about3Item .maskList .maskItem img{
     position:absolute;
@@ -348,4 +325,227 @@ img {
     background:url("../img/greenLine.png") no-repeat;
     z-index: 3;
 }
-/*线背景:   宽度357px 高度:998px*/
+
+/*course*/
+#wrap .content .contentList .contentItem.course .course1{
+    width:400px;
+    margin:50px;
+}
+#wrap .content .contentList .contentItem.course .course2{
+    width:400px;
+    margin-left:50px;
+}
+#wrap .content .contentList .contentItem.course .course3{
+    position:absolute;
+    right:50px;
+    top:70px;
+    width:480px;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List{
+    overflow:hidden;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Item{
+    position:relative;
+    float:left;
+    width: 120px;
+    height: 132px;
+    transform-style:preserve-3d;
+    transition: .3s;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Item .front{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-image: url('../img/pcwelt.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Item .back{
+    width:100%;
+    height:100%;
+    background-color: #009ee0;
+    text-align: center;
+    padding:15px;
+    box-sizing:border-box;
+    transform:rotateY(180deg);
+    backface-visibility:hidden;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Item:hover{
+    transform:rotateY(180deg);
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus{
+    position:absolute;
+    top:-5px;
+    width: 9px;
+    height: 410px;
+    background: url("../img/plus_row.png") no-repeat;
+
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus:nth-child(1){
+    left:-6px;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus:nth-child(2){
+    left:114px;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus:nth-child(3){
+    left:234px;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus:nth-child(4){
+    left:354px;
+}
+#wrap .content .contentList .contentItem.course .course3 .course3List .course3Plus:nth-child(5){
+    left:474px;
+}
+
+/*home*/
+#wrap .content .contentList .contentItem.home .homeList{
+    position:relative;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    perspective:1000px;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+    text-align:center;
+    color:white;
+    line-height:520px;
+    visibility:hidden;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem:nth-child(1){
+    background-color:#dc6c5f;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem:nth-child(2){
+    background-color:#95dc84;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem:nth-child(3){
+    background-color:#64b9d2;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem:nth-child(4){
+    background-color:#000;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem.active{
+    visibility:visible;
+}
+#wrap .content .contentList .contentItem.home .iconList{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    overflow: hidden;
+}
+#wrap .content .contentList .contentItem.home .iconList .iconItem{
+    float:left;
+    width: 20px;
+    height: 20px;
+    border-radius:50%;
+    background-color: rgba(255,255,255,.5);
+    margin: 2px;
+    box-shadow: 0 0 4px rgba(25,25,25,.8);
+}
+#wrap .content .contentList .contentItem.home .iconList .iconItem.active{
+    background-color: #fff;
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem.leftHide{
+    visibility:hidden;
+    animation:leftH 3s linear;
+}
+@keyframes leftH{
+    0%{visibility:visible;}
+    50%{transform:translateX(-40%) rotateY(30deg) scale(.8);}
+    100%{transform:translateZ(-200px);}
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem.rightShow{
+    visibility:visible;
+    animation:rightS 3s linear;
+}
+@keyframes rightS{
+    0%{visibility: hidden;transform:translateZ(-200px);}
+    50%{transform: translateX(40%) rotateY(-30deg) scale(.8);}
+    100%{}
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem.leftShow{
+    visibility: visible;
+    animation:leftShow 3s linear;
+}
+@keyframes leftShow{
+    0%{visibility:hidden;transform:translateZ(-200px);}
+    50%{transform:translateX(-40%) rotateY(30deg) scale(.8);}
+    100%{}
+}
+#wrap .content .contentList .contentItem.home .homeList .homeItem.rightHide{
+    visibility:hidden;
+    animation:rightH 3s linear;
+}
+@keyframes rightH{
+    0%{visibility:visible;}
+    50%{transform:translateX(40%) rotateY(-30deg) scale(.8);}
+    100%{transform:translateZ(-200px);}
+}
+
+/*team*/
+#wrap .content .contentList .contentItem.team{
+    overflow:hidden;
+}
+#wrap .content .contentList .contentItem.team .team1{
+    float:left;
+    margin:50px;
+    width:400px;
+}
+#wrap .content .contentList .contentItem.team .team2{
+    float:left;
+    margin:50px;
+    width:400px;
+}
+#wrap .content .contentList .contentItem.team .team3{
+    position:absolute;
+    left:50%;
+    top:230px;
+    transform:translateX(-50%);
+    width: 944px;
+    height: 448px;
+
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List .team3Item{
+    width:236px;
+    height: 100%;
+    float:left;
+    background-image:url("../img/team.png");
+    background-repeat:no-repeat;
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List .team3Item:nth-child(1){
+    background-position:3px 0;
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List .team3Item:nth-child(2){
+    background-position:-230px 0;
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List .team3Item:nth-child(3){
+    background-position:-483px 0;
+}
+#wrap .content .contentList .contentItem.team .team3 .team3List .team3Item:nth-child(4){
+    background-position:-710px 0;
+}
+/*标题:  空隙,上下左右50*/
+/*宽度,400*/
+/*文本区域: 空隙,上下左右50*/
+/*宽度,400*/
+
+/*列表区域: 宽度:944 高度 448  居中*/
+                     /*top ：230px*/
+
+                     /*列表区域元素：宽度：236px*/
+                     /*biackground-positon: 3px 0px;*/
+/*background-position: -230px 0px;*/
+/*background-position: -483px 0px;*/
+/*background-position: -710px 0px;*/
