@@ -9,7 +9,14 @@
 <div id="wrap">
     <header class="header">
         <div class="headerMain">
-            <h1 class="logo"><a href="javascript:;"><img src="img/logo.png" alt=""></a></h1>
+            <h1 class="logo">
+                <a href="javascript:;">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </h1>
+            <div class="music">
+                <audio src="img/audio.mp3" class="audio"></audio>
+            </div>
             <nav class="nav">
                 <ul class="navList">
                     <li class="navItem">
@@ -133,6 +140,9 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="plane1"></div>
+                    <div class="plane2"></div>
+                    <div class="plane3"></div>
                 </div>
             </li>
             <li class="contentItem works">
@@ -176,6 +186,9 @@
                     </div>
                     <div class="work3">
                     </div>
+                    <div class="pencel1"></div>
+                    <div class="pencel2"></div>
+                    <div class="pencel3"></div>
                 </div>
             </li>
             <li class="contentItem about">
@@ -242,188 +255,12 @@
             <li class="barItem"></li>
         </ul>
     </div>
+    <div class="start">
+        <div class="startUp"></div>
+        <div class="line"></div>
+        <div class="startDown"></div>
+    </div>
 </div>
-<script type="text/javascript">
-    window.onload=function(){
-        var header = document.querySelector('#wrap .header');
-        var content = document.querySelector('#wrap .content');
-        var contentItems = document.querySelectorAll('#wrap .content .contentList .contentItem');
-        var navItems = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem');
-        var ups = document.querySelectorAll('#wrap .header .headerMain .nav .navList .navItem a .up');
-        var arrow = document.querySelector('#wrap .header .arrow');
-        var contentList = document.querySelector('#wrap .content .contentList');
-        var barItems=document.querySelectorAll('#wrap .bar .barList .barItem');
-        var iconItems=document.querySelectorAll('#wrap .content .contentList .contentItem.home .iconList .iconItem');
-        var homeItems=document.querySelectorAll('#wrap .content .contentList .contentItem.home .homeList .homeItem');
-        var mouseIndex=4;
-        var timer=null;
-        var iconIndex=0;
-        var isAnimation=false;
-
-
-        //主体内容初始化
-        contentBind();
-        function contentBind() {
-            content.style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
-            for (var i = 0; i < contentItems.length; i++) {
-                contentItems[i].style.height = document.documentElement.clientHeight - header.offsetHeight + 'px';
-            }
-        }
-
-        //导航点击跳转
-        headerBind();
-        function headerBind() {
-            arrow.style.left = navItems[0].getBoundingClientRect().left + navItems[0].offsetWidth / 2 + 'px';
-            ups[0].style.width = '100%';
-            for (var i = 0; i < navItems.length; i++) {
-                navItems[i].index = i;
-                navItems[i].onclick = function () {
-                    move(this.index);
-                    mouseIndex=this.index;
-                }
-            }
-
-
-        }
-        //移动
-        function move(index) {
-            for (var i = 0; i < ups.length; i++) {
-                ups[i].style.width = '';
-            }
-            ups[index].style.width = '100%';
-            contentList.style.top = -index * +contentItems[index].offsetHeight + 'px';
-            arrow.style.left = navItems[index].getBoundingClientRect().left + navItems[index].offsetWidth / 2 + 'px';
-            for (var i = 0; i <barItems.length ; i++) {
-                barItems[i].classList.remove('active');
-            }
-            barItems[index].classList.add('active');
-        }
-        //鼠标滚动
-        mouseScroll();
-        function mouseScroll(){
-            //ie/chrome
-            document.onmousewheel=function(event){
-                clearTimeout(timer);
-                timer=setTimeout(function(){
-                    scrollMove(event);
-                },200)
-            };
-            //firefox
-            if(document.addEventListener){
-                document.addEventListener('DOMMouseScroll',function(event){
-                    clearTimeout(timer);
-                    timer=setTimeout(function(){
-                        scrollMove(event);
-                    },200);
-                });
-            }
-
-            function scrollMove(event){
-                event=event || window.event;
-                var flag='';
-                if(event.wheelDelta){
-                    //ie/chrome
-                    if(event.wheelDelta>0){
-                        flag='up';
-                    }else{
-                        flag='down';
-                    }
-
-                }else if(event.detail){
-                    if(event.detail<0){
-                        flag='up';
-                    }else{
-                        flag='down';
-                    }
-                }
-                switch (flag) {
-                    case 'up':
-                        if(mouseIndex>0){
-                            mouseIndex--;
-                            move(mouseIndex);
-                        }
-                        break;
-                    case 'down':
-                        if(mouseIndex<contentItems.length-1){
-                            mouseIndex++;
-                            move(mouseIndex);
-                        }
-                        break;
-                }
-                event.preventDefault&&event.preventDefault();
-                return false;
-            };
-        }
-
-
-        //侧栏点击跳转
-        barBind();
-        function  barBind() {
-            for (var i = 0; i <barItems.length ; i++) {
-                barItems[i].index=i;
-                barItems[i].onclick=function(){
-                    move(this.index);
-                    mouseIndex=this.index;
-                }
-            }
-        }
-        window.onresize=function(){
-            contentBind();
-            move(mouseIndex);
-        }
-
-        //首屏点击小圆点切换
-        for (var i = 0; i <iconItems.length ; i++) {
-            iconItems[i].index=i;
-            iconItems[i].onclick=function(){
-                if(isAnimation){
-                    return;
-                }
-                isAnimation=true;
-                setTimeout(function(){
-                    isAnimation=false
-                },3000);
-                for (var j = 0; j <homeItems.length ; j++) {
-                    homeItems[j].className='homeItem commonTitle';
-                }
-                if(this.index>iconIndex){
-                    homeItems[iconIndex].className='homeItem commonTitle leftHide';
-                    homeItems[this.index>iconItems.length-1?0:iconIndex+1].className='homeItem commonTitle rightShow';
-                }else if(this.index<iconIndex){
-                    homeItems[iconIndex].className='homeItem commonTitle rightHide';
-                    homeItems[this.index].className='homeItem commonTitle leftShow';
-                }else{
-                    homeItems[this.index].className='homeItem commonTitle active';
-                }
-                iconIndex=this.index;
-                for (var k = 0; k <iconItems.length ; k++) {
-                    iconItems[k].className='iconItem';
-                }
-                iconItems[this.index].className='iconItem active';
-            }
-        }
-
-        //自动轮播
-        setInterval(function(){
-            if(isAnimation){
-                return;
-            }
-            isAnimation=true;
-            setTimeout(function(){
-                isAnimation=false
-            },3000);
-            homeItems[iconIndex].className='homeItem commonTitle leftHide';
-            homeItems[iconIndex+1>iconItems.length-1?0:iconIndex+1].className='homeItem commonTitle rightShow';
-            iconIndex++;
-            if(iconIndex>iconItems.length-1){
-                iconIndex=0;
-            }
-            for (var i = 0; i <iconItems.length ; i++) {
-                iconItems[i].className='iconItem';
-            }
-            iconItems[iconIndex].className='iconItem active';
-        },4000);
-    }
-</script>
+<script src="js/index.js"></script>
 </body>
 </html>
